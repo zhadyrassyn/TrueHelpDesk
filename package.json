@@ -20,7 +20,9 @@
   "homepage": "https://github.com/zhadyrassyn/TrueHelpDesk#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
     "express": "^4.16.4",
+    "mongoose": "^5.3.11",
     "nodemon": "^1.18.6"
   }
 }
