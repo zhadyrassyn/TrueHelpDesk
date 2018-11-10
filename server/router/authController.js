@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const passport = require('../service/passport');
+
 const User = require('../db/model/user');
 
 router.post('/sign-in', passport.authenticate('local'), (req, res, next) => {
