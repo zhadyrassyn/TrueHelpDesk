@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const passport = require('../service/passport');
-const userRepostiry = require('../repository/userRepository');
+const userRepository = require('../repository/userRepository');
 
 router.post('/sign-in', passport.authenticate('local'), (req, res, next) => {
   res.cookie('user', JSON.stringify(req.user));
@@ -12,7 +12,7 @@ router.post('/sign-up', async (req, res, next) => {
   const user = { email, password, firstName, lastName, role, location, msisdn };
 
   try {
-    const savedUser = await userRepostiry.save(user);
+    const savedUser = await userRepository.save(user);
     if (savedUser) {
       req.login(savedUser, (error) => {
         if (error) {
