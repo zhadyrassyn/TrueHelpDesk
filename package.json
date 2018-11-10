@@ -1,0 +1,26 @@
+{
+  "name": "truehelpdesk",
+  "version": "1.0.0",
+  "description": "Hackathon project. HackDay 2018",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "watch": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhadyrassyn/TrueHelpDesk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhadyrassyn/TrueHelpDesk/issues"
+  },
+  "homepage": "https://github.com/zhadyrassyn/TrueHelpDesk#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.6"
+  }
+}
