@@ -1,33 +1,34 @@
 const router = require('express').Router();
 const passport = require('../service/passport');
-const userRepostiry = require('../repository/userRepository');
+const User = require('../db/model/user');
 
 router.post('/sign-in', passport.authenticate('local'), (req, res, next) => {
   res.cookie('user', JSON.stringify(req.user));
   res.sendStatus(200);
 });
 
-router.post('/sign-up', async (req, res, next) => {
+router.post('/sign-up', (req, res, next) => {
   const { email, password, firstName, lastName, role, location, msisdn } = req.body;
-  const user = { email, password, firstName, lastName, role, location, msisdn };
+  const user = new User({ email, password, firstName, lastName, role, location, msisdn });
 
-  try {
-    const savedUser = await userRepostiry.save(user);
-    if (savedUser) {
-      req.login(savedUser, (error) => {
-        if (error) {
-          return next(error);
-        }
-      });
+  user.save()
+    .then((savedUser) => {
+      if (savedUser) {
+        req.login(savedUser, (error) => {
+          if (error) {
+            return next(error);
+          }
+        });
 
-      res.cookie('user', JSON.stringify(req.user));
-      res.status(201).send(req.user);
-    }
+        res.cookie('user', JSON.stringify(req.user));
+        res.status(201).send(req.user);
+      }
+    })
+    .catch((error) => {
+      console.log('error ', error);
+      res.status(500).send({ error });
+    })
 
-  } catch (error) {
-    console.log('error ', error);
-    res.status(500).send({ error });
-  }
 });
 
 router.post('/sign-out', (req, res, next) => {

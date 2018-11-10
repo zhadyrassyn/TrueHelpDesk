@@ -11,7 +11,11 @@ const Task = mongoose.model('task', {
   },
   started: Date,
   finished: Date,
-  user: {
+  customer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  performer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
@@ -19,6 +23,7 @@ const Task = mongoose.model('task', {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'TaskType',
   },
+
 });
 
 module.exports = Task;
