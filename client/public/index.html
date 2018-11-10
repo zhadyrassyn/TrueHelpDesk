@@ -1,1 +1,138 @@
-Cool project
+<!doctype html>
+<html class="fixed" data-ng-app="app">
+	<head>
+
+		<!-- Basic -->
+		<meta charset="UTF-8">
+        <base href="/">
+		<title>Dashboard | JSOFT Themes | JSOFT-Admin</title>
+		<meta name="keywords" content="HTML5 Admin Template" />
+		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
+		<meta name="author" content="JSOFT.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/employee/assets/vendor/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="/employee/assets/vendor/font-awesome/css/font-awesome.css" />
+<link rel="stylesheet" href="/employee/assets/vendor/magnific-popup/magnific-popup.css" />
+<link rel="stylesheet" href="/employee/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+<!-- Specific Page Vendor CSS -->
+<link rel="stylesheet" href="/employee/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+<link rel="stylesheet" href="/employee/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
+<link rel="stylesheet" href="/employee/assets/vendor/morris/morris.css" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="/employee/assets/stylesheets/theme.css" />
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="/employee/assets/stylesheets/skins/default.css" />
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="/employee/assets/stylesheets/theme-custom.css">
+
+<!-- Head Libs -->
+<script src="/employee/assets/vendor/modernizr/modernizr.js"></script>
+
+	</head>
+	<body>
+		<section class="body" data-ng-model="$root.userAuth">
+
+			<!-- start: header -->
+			<div data-ng-if="$root.userAuth" >	
+			<employee-header-component></employee-header-component>
+			<!-- end: header -->
+		</div>
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				<div data-ng-if="$root.userAuth">	
+				<employee-menu-component></employee-menu-component>
+				<!-- end: sidebar -->
+			</div>
+                <ui-view></ui-view>
+				<!-- Main PAGE -->
+				
+				</section>
+			</div>
+			<div data-ng-if="$root.userAuth">	
+			<employee-sidebar-component></employee-sidebar-component>
+		</div>
+		</section>
+		
+		<!-- Angular JS-->
+		<script type="text/javascript" src="vendor/js/angular.min.js"></script>
+		  <script type="text/javascript" src="vendor/js/angular-ui-router.js"></script>
+		  <script type="text/javascript" src="angular.module.js"></script>
+		
+		  		<!-- Vendor -->
+		<script src="/employee/assets/vendor/jquery/jquery.js"></script>
+		<script src="/employee/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+		<script src="/employee/assets/vendor/bootstrap/js/bootstrap.js"></script>
+		<script src="/employee/assets/vendor/nanoscroller/nanoscroller.js"></script>
+		<script src="/employee/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="/employee/assets/vendor/magnific-popup/magnific-popup.js"></script>
+		<script src="/employee/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+		
+		<!-- Specific Page Vendor -->
+		<script src="/employee/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="/employee/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="/employee/assets/vendor/jquery-appear/jquery.appear.js"></script>
+		<script src="/employee/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+		<script src="/employee/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+		<script src="/employee/assets/vendor/flot/jquery.flot.js"></script>
+		<script src="/employee/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+		<script src="/employee/assets/vendor/flot/jquery.flot.pie.js"></script>
+		<script src="/employee/assets/vendor/flot/jquery.flot.categories.js"></script>
+		<script src="/employee/assets/vendor/flot/jquery.flot.resize.js"></script>
+		<script src="/employee/assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+		<script src="/employee/assets/vendor/raphael/raphael.js"></script>
+		<script src="/employee/assets/vendor/morris/morris.js"></script>
+		<script src="/employee/assets/vendor/gauge/gauge.js"></script>
+		<script src="/employee/assets/vendor/snap-svg/snap.svg.js"></script>
+		<script src="/employee/assets/vendor/liquid-meter/liquid.meter.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/jquery.vmap.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+		<script src="/employee/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="/employee/assets/javascripts/theme.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="/employee/assets/javascripts/theme.custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="/employee/assets/javascripts/theme.init.js"></script>
+
+
+		<!-- Examples -->
+        <script src="/employee/assets/javascripts/dashboard/examples.dashboard.js"></script>
+		
+		
+        <script src="/employee/index/index.module.js"></script>
+        <script src="/employee/index/index.component.js"></script>
+        <script src="/employee/header/header.module.js"></script>
+        <script src="/employee/header/header.component.js"></script>
+        <script src="/employee/menu/menu.module.js"></script>
+		<script src="/employee/menu/menu.component.js"></script>
+		<script src="/employee/sidebar/sidebar.module.js"></script>
+		<script src="/employee/sidebar/sidebar.component.js"></script>
+		<script src="/employee/signin/signin.module.js"></script>
+		<script src="/employee/signin/signin.component.js"></script>
+		<script src="/employee/tasks/tasks.module.js"></script>
+		<script src="/employee/tasks/tasks.component.js"></script>
+		<script src="/employee/taskdetail/taskdetail.module.js"></script>
+		<script src="/employee/taskdetail/taskdetail.component.js"></script>
+		
+	</body>
+</html>
