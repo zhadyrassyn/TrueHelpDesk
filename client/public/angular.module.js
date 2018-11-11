@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router','employeeIndexModule','employeeHeaderModule', 'employeeMenuModule','employeeSidebarModule','employeeSigninModule','employeeTasksModule','employeeTaskdetailModule']);
+var app = angular.module('app', ['ui.router','employeeIndexModule','employeeHeaderModule', 'employeeMenuModule','employeeSidebarModule','employeeSigninModule','employeeTasksModule','employeeTaskdetailModule','userTasksModule','userSuccessModule','userReviewModule', 'ngCookies']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -14,14 +14,34 @@ var states = [
         component: 'employeeSigninComponent'
     },
     {
-        name: 'tasks',
-        url: '/tasks',
+        name: 'employeeTasks',
+        url: '/employeetasks',
         component: 'employeeTasksComponent'
     },
     {
-        name: 'tasksDetail',
-        url: '/taskdetail',
+        name: 'employeeTaskDetail',
+        url: '/employeetaskdetail',
         component: 'employeeTaskdetailComponent'
+    },
+    {
+        name: 'userTasks',
+        url: '/userTasks',
+        component: 'userTasksComponent'
+    },
+    {
+        name: 'userTaskDetail',
+        url: '/userTaskdetail',
+        component: 'userTaskdetailComponent'
+    },
+    {
+        name: 'userSuccess',
+        url: '/userSuccess',
+        component: 'userSuccessComponent'
+    },
+    {
+        name: 'userReview',
+        url: '/userReview',
+        component: 'userReviewComponent'
     },
 ];
 

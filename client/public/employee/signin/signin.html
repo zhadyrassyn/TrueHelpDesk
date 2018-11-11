@@ -12,9 +12,20 @@
             <div class="panel-body">
                 <form action="" method="post">
                     <div class="form-group mb-lg">
+                        <label>Роль пользователя</label>
+                       
+                            <select class="form-control input-lg mb-md" ng-model="data.singleSelect">
+                                <option>Выберите роль</option>
+                                <option>Пользователь</option>
+                                <option>Исполнитель</option>
+                            </select>
+                            
+                    </div>
+                    
+                    <div class="form-group mb-lg">
                         <label>Логин</label>
                         <div class="input-group input-group-icon">
-                            <input name="username" type="text" class="form-control input-lg" />
+                            <input name="username" type="text" class="form-control input-lg" data-ng-model="email"/>
                             <span class="input-group-addon">
                                 <span class="icon icon-lg">
                                     <i class="fa fa-user"></i>
@@ -28,7 +39,7 @@
                             <label class="pull-left">Пароль</label>
                         </div>
                         <div class="input-group input-group-icon">
-                            <input name="pwd" type="password" class="form-control input-lg" />
+                            <input name="pwd" type="password" class="form-control input-lg" data-ng-model="password"/>
                             <span class="input-group-addon">
                                 <span class="icon icon-lg">
                                     <i class="fa fa-lock"></i>
@@ -39,9 +50,13 @@
 
                     <div class="row">
                         
-                        <div class="mb-xs text-center">
-                            <button type="submit" class="btn btn-facebook mb-md ml-xs mr-xs hidden-xs" data-ng-click="authorizedUser()" ui-sref="index" >Вход</button>
-                            <!-- <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button> -->
+                        <div class="mb-xs text-center" ng-if="data.singleSelect=='Пользователь'">
+                            <button type="submit" class="btn btn-facebook mb-md ml-xs mr-xs hidden-xs" data-ng-click="authorizedUser(email, password)" ui-sref="userTasks" >Вход</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg" data-ng-click="authorizedUser(email, password)" ui-sref="userTasks">Вход</button>
+                        </div>
+                        <div class="mb-xs text-center" ng-if="data.singleSelect=='Исполнитель'">
+                            <button type="submit" class="btn btn-facebook mb-md ml-xs mr-xs hidden-xs" data-ng-click="authorizedUser(email, password)" ui-sref="employeeTasks" >Вход</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg" data-ng-click="authorizedUser(email, password)" ui-sref="employeeTasks">Вход</button>
                         </div>
                     </div>
 
